@@ -7,25 +7,14 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>CreatedAt</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Title</th>
+        </tr>
         </thead>
         <tbody>
         {% for blog_post in blog_posts %}
             <tr>
-                <td>{{ blog_post.id }}</td>
-                <td>{{ blog_post.title }}</td>
-                <td>{{ blog_post.content }}</td>
-                <td>{{ blog_post.createdAt ? blog_post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('blog_post_show', {'id': blog_post.id}) }}">show</a>
-                    <a href="{{ path('blog_post_edit', {'id': blog_post.id}) }}">edit</a>
-                </td>
+                <td>{{ blog_post }}</td>
             </tr>
         {% else %}
             <tr>
@@ -34,6 +23,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('blog_post_new') }}">Create new</a>
 {% endblock %}

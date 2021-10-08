@@ -7,23 +7,18 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class BlogPostService
 {
-    /**
-     * @var \Doctrine\ORM\EntityManagerInterface
-     */
-    private $entityManager;
-
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(private EntityManagerInterface $entityManager)
     {
-        $this->entityManager = $entityManager;
     }
 
-    public function getTitles()
+    /**
+     * @return array<string|int, mixed>
+     */
+    public function getTitles(): array
     {
-        $titles = $this
+        return $this
             ->entityManager
             ->getRepository(BlogPostRepository::class)
             ->getTitlesList();
-
-        return $titles;
     }
 }

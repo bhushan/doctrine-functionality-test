@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -7,8 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * BlogPost
  * @ORM\Table(name="blog_post")
- *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\BlogPostRepository")
  */
 class BlogPost
 {
