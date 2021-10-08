@@ -43,7 +43,7 @@ class BlogComment
     private $createdAt;
 
     /**
-     * @var \BlogPost
+     * @var \App\Entity\BlogPost
      *
      * @ORM\ManyToOne(targetEntity="BlogPost")
      * @ORM\JoinColumns({
